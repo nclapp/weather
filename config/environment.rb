@@ -11,6 +11,9 @@ require 'rubygems'
 require 'uri'
 require 'pathname'
 
+require 'open-uri'  # These two are
+require 'json'      # from wunderground
+
 require 'pg'
 require 'active_record'
 require 'logger'
