@@ -2,7 +2,7 @@
 
  <div class="container">
 
-<div class="row">
+<div class="row well">
   <div class="col-xs-12 col-sm-6 col-md-8">
     <h2>Current temperature in <%= @location %> is <%= @temp_f %>&deg;F!</h2>
     <h3>Or for you metric types, <%= @temp_c %>&deg;C.</h3>
@@ -13,14 +13,12 @@
   </div><!-- /.col-md-8 -->
 
   <div class="col-xs-6 col-md-4">
-    <p class="h4">Here's a look at the sky:</p>
+    <!--p class="h4">Here's a look at the sky:</p-->
     <img alt="<%= @location %> radar image" src= "<%= @radar %>" >
   </div><!-- .col-md-4 -->
 </div><!-- /row -->
 
-<hr />
-
-<div class="row">
+<div class="row well">
   <p class="text-center h4">Right on! Latest data from <%= @updated_at %>.</p>
 </div><!-- /.row -->
 
