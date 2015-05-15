@@ -23,10 +23,17 @@ require "sinatra/reloader" if development?
 
 require 'erb'
 
+require_relative 'secrets' if File.exists?(File.expand_path('../secrets.rb',  __FILE__))
+
 # Some helper constants for path-centric logic
 APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
 
 APP_NAME = APP_ROOT.basename.to_s
+
+WX_LINK = ENV['WX_LINK'] || WX_LINK
+ASTRO_LINK = ENV['ASTRO_LINK'] || ASTRO_LINK
+RADAR_LINK = ENV['RADAR_LINK '] || RADAR_LINK
+BEACH_LINK = ENV['BEACH_LINK'] || BEACH_LINK
 
 configure do
   # By default, Sinatra assumes that the root is the file that calls the configure block.

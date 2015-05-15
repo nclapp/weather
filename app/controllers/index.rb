@@ -1,9 +1,3 @@
-WX_LINK = "http://api.wunderground.com/api/3db58be030a07a82/geolookup/conditions/q/IL/Chicago.json"
-ASTRO_LINK = "http://api.wunderground.com/api/3db58be030a07a82/astronomy/q/IL/Chicago.json"
-RADAR_LINK = "http://api.wunderground.com/api/3db58be030a07a82/animatedradar/q/IL/Chicago.gif?width=280&height=280&newmaps=1"
-BEACH_LINK = "https://data.cityofchicago.org/api/views/v7bk-5pm9/rows.json"
-
-
 get "/" do
   open(WX_LINK) do |f|  # This is OpenURI
     wx_json = JSON.parse(f.read)
