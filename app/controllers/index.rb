@@ -44,12 +44,6 @@ get "/radar" do
   erb :_radar, layout: false
 end
 
-get "/show-gopher" do
-
-end
-
-get
-
 
 
 

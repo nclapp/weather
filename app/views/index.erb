@@ -21,7 +21,7 @@
         Sunrise at <%= @sunrise_hour %>:<%= @sunrise_minute %>, sunset at <%= @sunset_hour %>:<%= @sunset_minute %>.
       </h3>
 
-      <h3>
+      <h3 id="moon">
         Moon phase: <%= @moonphase %>.
       </h3>
 
@@ -33,7 +33,7 @@
 
   </div><!-- /row -->
 
-  <div class="row well">
+  <div id="gophooter" class="row well">
     <p class="text-center h4">
       Right on! Latest data from <%= @updated_at %>.
     </p>

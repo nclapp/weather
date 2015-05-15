@@ -18,6 +18,15 @@ $(document).ready(function() {
       })
   })
 
+  $(document).on("click", "#gophooter", function(event){
+    $("body").css("background-image", 'url("https://media2.giphy.com/media/tghHsahSrWTEk/200.gif")');
+  });
+
+  $(document).on("click", "#moon", function(event){
+    console.log("hi");
+    $("body").css("background-image", '');
+  });
+
 }); // end document ready
 
 
