@@ -2,18 +2,24 @@
 
  <div class="container">
 
-  <div class="starter-template">
-    <h1>Current temperature in <%= @location %> is <%= @temp_f %>&deg;F!</h1>
-    <h2>Or for you metric types, <%= @temp_c %>&deg;C.</h2>
+<div class="row">
+  <div class="col-xs-12 col-sm-6 col-md-8">
+    <h2>Current temperature in <%= @location %> is <%= @temp_f %>&deg;F!</h2>
+    <h3>Or for you metric types, <%= @temp_c %>&deg;C.</h3>
 
     <h3>
-      It's <%= @conditions %>, and the wind is blowing <%= @wind_mph %> mph from the <%= @wind_dir %>, with gusts to <%= @wind_gust %>. Siiiick!
+      <%= @conditions %>, with the wind blowing <%= @wind_mph %> mph from the <%= @wind_dir %>, and gusting up to <%= @wind_gust %>. Siiiick!
     </h3>
+  </div><!-- /.col-md-8 -->
 
-    <h3>Here's a look at the sky: <img src= "<%= @radar %>" ></h3>
+  <div class="col-xs-6 col-md-4">
+    <p class="h4">Here's a look at the sky:</p>
+    <img class="img-responsive" alt="<%= @location %> radar image" src= "<%= @radar %>" >
+  </div><!-- .col-md-4 -->
+</div><!-- /row -->
 
-    <p class="lead">Right on! Latest data from <%= @updated_at %>.</p>
-
-  </div>
+<div class="row">
+  <p class="text-center" "h3">Right on! Latest data from <%= @updated_at %>.</p>
+</div><!-- /.row -->
 
 </div><!-- /.container -->
