@@ -1,7 +1,23 @@
 $(document).ready(function() {
-  // This is called after the document has loaded in its entirety
-  // This guarantees that any elements we bind to will exist on the page
-  // when we try to bind to them
 
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
-});
+  $(document).on("click", "#radar", function(event){
+    $.ajax({
+      url: "/rage"
+    })
+      .success(function(response){
+        $("#radar").replaceWith(response);
+      })
+  })
+
+  $(document).on("click", "#cagerage", function(event){
+    $.ajax({
+      url: "/radar"
+    })
+      .success(function(response){
+        $("#cagerage").replaceWith(response);
+      })
+  })
+
+}); // end document ready
+
+

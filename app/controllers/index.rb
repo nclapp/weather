@@ -5,9 +5,6 @@ BEACH_LINK = "https://data.cityofchicago.org/api/views/v7bk-5pm9/rows.json"
 
 
 get "/" do
-
-  @radar = RADAR_LINK
-
   open(WX_LINK) do |f|  # This is OpenURI
     wx_json = JSON.parse(f.read)
     @location = wx_json['location']['city']
@@ -28,6 +25,31 @@ get "/" do
     @sunset_minute = astro_json['moon_phase']['sunset']['minute']
     @moonphase = (astro_json['moon_phase']['phaseofMoon']).downcase
   end
-
+  @radar = RADAR_LINK
   erb :index
 end
+
+
+get "/rage" do
+  erb :_cagerage, layout: false
+end
+
+
+get "/radar" do
+  open(WX_LINK) do |f|
+    wx_json = JSON.parse(f.read)
+    @location = wx_json['location']['city']
+  end
+  @radar = RADAR_LINK
+  erb :_radar, layout: false
+end
+
+get "/show-gopher" do
+
+end
+
+get
+
+
+
+
